@@ -126,14 +126,15 @@
                 idopont: idopontDB,
                 leiras: leirasDB
             })
-            // mi legyen, ha sikerült (opcionális)
             .then((docRef) => {
                     console.log(docRef.id)
                 })
-            // mi legyen, ha hiba van (opcionális, de erősen ajánlott)
             .catch((error) => {
                 console.error(error);
             });
+
+            
+
         })
     </script>
 </body>
