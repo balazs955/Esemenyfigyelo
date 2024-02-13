@@ -9,19 +9,28 @@
     <title>Eseményfigyelő</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <form class="d-flex input-group w-auto">
+            <input type="search" class="form-control rounded" placeholder="Keresés" aria-label="Search" aria-describedby="search-addon"/>
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </form>
+        </div>
+      </nav>
+
+    <div class="container">
+
+    </div>
 
 
 
 
-    
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+
         const firebaseConfig = {
             apiKey: "AIzaSyAXpynGUPRchbUvyYaoYlQArZoXhrMG_5w",
             authDomain: "esemenyfigyelo-1d603.firebaseapp.com",
@@ -31,7 +40,6 @@
             appId: "1:347480607603:web:97a5c885f67d457f8e5306"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
     </script>
 </body>
