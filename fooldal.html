@@ -30,6 +30,7 @@
                         <input type="text" class="form-control" id="helyszinID" placeholder="Helyszín....">
                         <input type="text" class="form-control" id="idopontID" placeholder="Időpont.... (pl.: 2001.01.01 - 11:11)">
                         <input type="text-area" class="form-control" id="leirasID" placeholder="Leírás">
+                        <input type="button" class="btn btn-secondary" id="buttonID">
                     </div>
                 </form>
             </div>
@@ -53,6 +54,31 @@
         };
 
         const app = initializeApp(firebaseConfig);
+        const db = firebase.firestore(app);
+
+        document.getElementById("buttonID").addEventListener('click', function(e){
+            e.preventDefault();
+
+            const kategoriaDB = document.getElementById("kategoriaID").value;
+            const helyszinDB = document.getElementById("helyszinID").value;
+            const idopontDB = document.getElementById("idopontID").value;
+            const leirasDB = document.getElementById("leirasID").value;
+
+            db.collection("esemeny").add({
+                kategoria: kategoriaDB,
+                helyszin: helyszinDB,
+                idopont: idopontDB,
+                leiras: leirasDB
+            })
+            // mi legyen, ha sikerült (opcionális)
+            .then((docRef) => {
+                    console.log(docRef.id)
+                })
+            // mi legyen, ha hiba van (opcionális, de erősen ajánlott)
+            .catch((error) => {
+                console.error(error);
+            });
+        })
     </script>
 </body>
 </html>
